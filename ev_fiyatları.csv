@@ -1,0 +1,26 @@
+import pandas as pd
+veri {
+"Fiyat": [850000, 1100000, 950000, 760000],
+    "Oda Sayısı": [3, 4, 2, 3],
+    "Metrekare": [120, 150, 100, 115],
+    "Semt": ["Merkez", "Efeler", "Çine", "Nazilli"],
+    "Bina Yaşı": [5, 2, 10, 8],
+    "Kat Sayısı": [5, 3, 4, 6],
+    "Isınma Tipi": ["Doğalgaz", "Klima", "Soba", "Doğalgaz"]
+    }
+df = pd.DataFrame(veri)
+print(df)
+print(df.groupby("Semt")["Fiyat"].mean())
+print(df.corr(numeric_only=True))
+  import numpy as np
+
+np.random.seed(42)
+fiyatlar = np.random.randint(600000, 1400000, size=100)
+oda_sayilari = np.random.choice([2, 3, 4, 5], size=100)
+metrekareler = np.random.randint(80, 180, size=100)
+
+df_simulasyon = pd.DataFrame({
+    "Fiyat": fiyatlar,
+    "Oda Sayısı": oda_sayilari,
+    "Metrekare": metrekareler
+})
